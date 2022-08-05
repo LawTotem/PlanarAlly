@@ -42,6 +42,7 @@
         "toggle_public_private": "Toggle public / private",
         "toggle_draw": "Draw on token",
         "initiative": "Initiative",
+        "gamelog": "Game Log",
         "search": "Search",
         "name": "Name",
         "add": "Add",
@@ -211,6 +212,7 @@
                 },
                 "ShapeContext": {
                     "show_initiative": "Show initiative",
+                    "show_gamelog": "Show game log",
                     "add_initiative": "Add initiative",
                     "add_all_initiative": "Add all to initiative",
                     "move_back": "Move to back",
@@ -348,6 +350,7 @@
                     "bring_pl": "Bring players",
                     "create_basic_token": "Create basic token",
                     "show_initiative": "Show initiative",
+                    "show_gamelog": "Show game log",
                     "create_spawn_location": "Create spawn location",
                     "new_spawn_question": "What should this spawn location be named?",
                     "new_spawn_title": "Creating new spawn location"

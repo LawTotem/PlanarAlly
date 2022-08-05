@@ -20,6 +20,7 @@ import { floorState } from "../../systems/floors/state";
 import { propertiesSystem } from "../../systems/properties";
 import { getProperties } from "../../systems/properties/state";
 import { initiativeStore } from "../initiative/state";
+import { gamelogStore } from "../gamelog/state";
 import { openCreateTokenDialog } from "../tokendialog/state";
 
 import { defaultContextLeft, defaultContextTop, showDefaultContextMenu } from "./state";
@@ -88,6 +89,11 @@ function showInitiativeDialog(): void {
     close();
 }
 
+function showGameLogDialog(): void {
+    gamelogStore.show(true);
+    close();
+}
+
 function showTokenDialog(): void {
     openCreateTokenDialog({ x: defaultContextLeft.value, y: defaultContextTop.value });
     close();
@@ -104,6 +110,7 @@ function showTokenDialog(): void {
         <li @click="bringPlayers" v-if="isDm">{{ t("game.ui.tools.DefaultContext.bring_pl") }}</li>
         <li @click="showTokenDialog">{{ t("game.ui.tools.DefaultContext.create_basic_token") }}</li>
         <li @click="showInitiativeDialog">{{ t("game.ui.tools.DefaultContext.show_initiative") }}</li>
+        <li @click="showGameLogDialog">{{ t("game.ui.tools.DefaultContext.show_gamelog") }}</li>
         <li @click="createSpawnLocation" v-if="isDm">{{ t("game.ui.tools.DefaultContext.create_spawn_location") }}</li>
     </ContextMenu>
 </template>

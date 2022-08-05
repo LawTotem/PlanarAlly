@@ -7,6 +7,7 @@ from ...models import PlayerRoom
 from ...models.role import Role
 from ...state.game import game_state
 
+from .gamelog import log_event_sid
 
 class RollInfo(TypedDict):
     player: str
@@ -24,3 +25,4 @@ async def on_dice_roll(sid: str, roll_info: RollInfo):
             await sio.emit(
                 "Dice.Roll.Result", data=roll_info, room=p_sid, namespace=GAME_NS
             )
+    await log_event_sid(sid, roll_info["shareWithAll"], "Rolled a " + str(roll_info['result']) + " on " + roll_info['roll'])

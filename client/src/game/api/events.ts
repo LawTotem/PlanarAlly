@@ -20,6 +20,7 @@ import "./events/shape/options";
 import "./events/shape/text";
 import "./events/shape/togglecomposite";
 import "./events/user";
+import "./events/gamelog";
 
 import { toGP } from "../../core/geometry";
 import { SyncMode } from "../../core/models/types";

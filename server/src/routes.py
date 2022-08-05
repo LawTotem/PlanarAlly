@@ -17,6 +17,7 @@ from .api.http import version
 from .app import admin_app, api_app, app as main_app
 from .config import config
 from .utils import FILE_DIR, STATIC_DIR
+from .api.http import chat
 
 
 subpath = os.environ.get("PA_BASEPATH", "/")
@@ -89,6 +90,7 @@ main_app.router.add_post(f"{subpath}/api/invite", http.claim_invite)
 main_app.router.add_get(f"{subpath}/api/version", version.get_version)
 main_app.router.add_get(f"{subpath}/api/changelog", version.get_changelog)
 main_app.router.add_get(f"{subpath}/api/notifications", notifications.collect)
+main_app.router.add_post(f"{subpath}/api/chat/{{creator}}/{{roomname}}/add", chat.chat)
 
 # ADMIN ROUTES
 

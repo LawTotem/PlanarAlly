@@ -19,6 +19,8 @@ import DiceResults from "./dice/DiceResults.vue";
 import Floors from "./Floors.vue";
 import Initiative from "./initiative/Initiative.vue";
 import { initiativeStore } from "./initiative/state";
+import GameLog from "./gamelog/GameLog.vue";
+import { gamelogStore } from "./gamelog/state";
 import LocationBar from "./menu/LocationBar.vue";
 import MenuBar from "./menu/MenuBar.vue";
 import SelectionInfo from "./SelectionInfo.vue";
@@ -64,6 +66,7 @@ onMounted(() => {
     // hide all UI elements that were previously open
     activeShapeStore.setShowEditDialog(false);
     initiativeStore.show(false);
+    gamelogStore.show(false);
     showDefaultContextMenu.value = false;
     showShapeContextMenu.value = false;
     tokenDialogVisible.value = false;
@@ -186,6 +189,7 @@ function setTempZoomDisplay(value: number): void {
         <Floors />
         <CreateTokenDialog />
         <Initiative />
+        <GameLog />
         <DefaultContext />
         <ShapeContext />
         <ShapeSettings />

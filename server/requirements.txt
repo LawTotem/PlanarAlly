@@ -6,3 +6,4 @@ cryptography==36.0.2
 python-socketio==5.5.2
 peewee==3.14.10
 typing_extensions==4.1.1
+arpeggio==2.0.0

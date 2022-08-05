@@ -14,5 +14,6 @@ from .signals import *
 from .typed import TypedModel
 from .user import *
 from .marker import *
+from .gamelog import *
 
 ALL_MODELS: List[Type[TypedModel]] = [model for model in all_subclasses(_BaseModel)]

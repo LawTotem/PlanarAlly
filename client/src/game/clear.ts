@@ -7,6 +7,7 @@ import { stopDrawLoop } from "./rendering/core";
 import { clearSystems } from "./systems";
 import { initiativeStore } from "./ui/initiative/state";
 import { visionState } from "./vision/state";
+import { gamelogStore } from "./ui/gamelog/state";
 
 export function clearGame(): void {
     stopDrawLoop();
@@ -16,6 +17,7 @@ export function clearGame(): void {
     document.getElementById("layers")!.innerHTML = "";
     compositeState.clear();
     initiativeStore.clear();
+    gamelogStore.clear();
     clearSystems();
     clearIds();
 }
